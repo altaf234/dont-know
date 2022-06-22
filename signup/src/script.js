@@ -27,10 +27,6 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 
-if (getAuth().currentUser) {
-  location.replace('/app');
-}
-
 function showErr(err) {
   document.getElementById('errorLog').textContent = err;
 }
@@ -43,7 +39,7 @@ onAuthStateChanged(getAuth(), (user) => {
     if (authChanged) {
       return;
     }
-    location.replace('/app');
+    location.replace('/dont-know/app');
   }
   else {
     authChanged = true;
@@ -72,7 +68,7 @@ window.signUp = async function() {
         createdAt: Timestamp.fromDate(new Date())
       }).then(() => {
         setDoing(false);
-        location.replace('/app');
+        location.replace('/dont-know/app');
       })
     })
     .catch((err) => {
@@ -102,7 +98,7 @@ document.getElementById('google').addEventListener('click', async (e) => {
         createdAt: Timestamp.fromDate(new Date())
       }).then(() => {
         setDoing(false);
-        location.replace('/app');
+        location.replace('/dont-know/app');
       });
     })
     .catch((err) => {
