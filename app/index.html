@@ -32,7 +32,7 @@
     
     document.querySelector('button').addEventListener('click', () => {
       getAuth().currentUser && signOut(getAuth()).then(() => {
-        location.replace('/signup');
+        location.replace('/dont-know/signup');
       })
     })
   </script>
